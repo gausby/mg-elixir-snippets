@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: defimpl
+# key: defimpl
+# --
+defimpl ${1:Protocol}, for: ${2:Type} do
+def ${0:callback(args)}
+end

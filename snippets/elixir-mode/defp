@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: defp
+# key: defp
+# --
+defp ${1:function(args)} do
+$0
+end
