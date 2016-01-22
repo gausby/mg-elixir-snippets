@@ -2,6 +2,6 @@
 # name: defmodule
 # key: defmodule
 # --
-defmodule ${1:Module} do
+defmodule ${1:ModuleName$(upcase-initials yas-text)} do
 $0
 end
