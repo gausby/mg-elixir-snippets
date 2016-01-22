@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: ExUnit.CaseTemplate
+# key: ExUnit.CaseTemplate
+# condition: (elixir-yasnippets--is-use-line-of "ExUnit.CaseTemplate")
+# --
+ExUnit.CaseTemplate
+
+setup do
+$0
+end
