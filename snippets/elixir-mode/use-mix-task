@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Mix.Task
+# key: Mix.Task
+# condition: (elixir-yasnippets--is-use-line-of "Mix.Task")
+# --
+Mix.Task
+
+def run(_args) do
+${1:Mix.shell.info "$0"}
+end
