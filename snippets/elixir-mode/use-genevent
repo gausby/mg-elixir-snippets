@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: GenEvent
+# key: GenEvent
+# condition: (elixir-yasnippets--is-use-line-of "GenEvent")
+# --
+GenEvent
+
+def handle_event(event, parent) do
+${2:send parent, event}$0
+{:ok, parent}
+end

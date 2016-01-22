@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Application
+# key: Application
+# condition: (elixir-yasnippets--is-use-line-of "Application")
+# --
+Application
+
+def start(_type, _args) do
+${1:Supervisor}.start_link()$0
+end

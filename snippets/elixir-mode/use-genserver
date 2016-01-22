@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: GenServer
+# key: GenServer
+# condition: (elixir-yasnippets--is-use-line-of "GenServer")
+# --
+GenServer
+
+# Client API
+def start_link(default) do
+GenServer.start_link(__MODULE__, default$1)
+end
+
+# Server callbacks
+def init(state) do
+{:ok, state}
+end

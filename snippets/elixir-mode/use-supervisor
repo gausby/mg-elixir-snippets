@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: Supervisor
+# key: Supervisor
+# condition: (elixir-yasnippets--is-use-line-of "Supervisor")
+# --
+Supervisor
+
+def start_link do
+Supervisor.start_link(__MODULE__, :ok)
+end
+
+def init(:ok) do
+children = [
+$0
+]
+supervise(children, strategy: :one_for_one)
+end

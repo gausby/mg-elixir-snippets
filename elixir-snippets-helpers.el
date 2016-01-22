@@ -36,5 +36,16 @@
             (if (string-match behaviour (nth 1 topic))
                 t)))))
 
+(defun elixir-yasnippets--is-use-line-of (module)
+  (let (beginning end currentLine topic)
+    (setq beginning (line-beginning-position))
+    (setq end (line-end-position))
+    (setq currentLine (buffer-substring-no-properties beginning end))
+    (setq topic (split-string currentLine))
+    (if (eq (length topic) 2)
+        (if (string-match "use" (pop topic))
+            (if (string-match module (pop topic))
+                t)))))
+
 (provide 'elixir-snippet-helpers)
 ;;; elixir-snippets-helpers.el ends here
