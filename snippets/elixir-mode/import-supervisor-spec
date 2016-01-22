@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: Supervisor.Spec
+# key: Supervisor.Spec
+# condition: (elixir-yasnippets--is-import-line-of "Supervisor.Spec")
+# --
+Supervisor.Spec, warn: false
+
+children = [
+worker(${1:Worker}, [$0]),
+]
+
+Supervisor.start_link(children, strategy: :one_for_one)
