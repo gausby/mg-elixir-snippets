@@ -1,0 +1,42 @@
+# -*- mode: snippet -*-
+# name: @behaviour :gen_fsm
+# key: :gen_fsm
+# condition: (elixir-yasnippets--is-behaviour-line-of ":gen_fsm")
+# --
+:gen_fsm
+
+def start_link(state) do
+  :gen_fsm.start_link(__MODULE__, ${1:state}, [])
+end
+
+# public api
+
+# states
+def idle(:idle, state) do
+  {:next_state, :idle, state}
+end
+
+# gen_fsm callbacks
+def init($1) do
+  {:ok, :idle$0, state}
+end
+
+def handle_info(_, _state_name, state) do
+  {:stop, :unexpected_message, state}
+end
+
+def handle_event(_, _state_name, state) do
+  {:stop, :unexpected_event, state}
+end
+
+def handle_sync_event(_event, _from, _state_name, state) do
+  {:stop, :unexpected_event, state}
+end
+
+def code_change(_old_version, state_name, state, _extra) do
+  {:ok, state_name, state}
+end
+
+def terminate(reason, _state_name, _state) do
+  reason
+end
