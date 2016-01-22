@@ -24,6 +24,15 @@
 
 ;;; Code:
 
+(defun elixir-yasnippets--string/ends-with (string suffix)
+ "Return t if STRING ends with SUFFIX."
+ (and (string-match (rx-to-string `(: ,suffix eos) t)
+       string)
+  t))
+
+(defun elixir-yasnippets--is-test-file ()
+  (elixir-yasnippets--string/ends-with buffer-file-name "_test.exs"))
+
 ;; detect if a line starts with `@behaviour ...`
 (defun elixir-yasnippets--is-behaviour-line-of (behaviour)
   (let (beginning end currentLine topic)

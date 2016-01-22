@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: test
+# key: test
+# condition: (elixir-yasnippets--is-test-file)
+# --
+test "$1" do
+$0
+end
