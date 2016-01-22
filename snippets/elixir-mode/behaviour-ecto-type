@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: @behaviour Ecto.Type
+# key: Ecto.Type
+# condition: (elixir-yasnippets--is-behaviour-line-of "Ecto.Type")
+# --
+Ecto.Type
+
+def type, do: ${:integer}
+
+# Casting rules
+def cast(value) do
+  {:ok, value}
+end
+def cast(_) do
+  :error
+end
+
+# Loading data
+def load(value) do
+  {:ok, value}
+end
+
+# Saving data
+def dump(value) do
+  {:ok, value}
+end
+def dump(_) do
+  :error
+end
