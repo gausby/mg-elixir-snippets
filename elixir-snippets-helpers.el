@@ -31,7 +31,7 @@
   t))
 
 (defun elixir-yasnippets--is-test-file ()
-  (elixir-yasnippets--string/ends-with buffer-file-name "_test.exs"))
+  (and buffer-file-name (elixir-yasnippets--string/ends-with buffer-file-name "_test.exs")))
 
 ;; detect if a line starts with `@behaviour ...`
 (defun elixir-yasnippets--is-behaviour-line-of (behaviour)
