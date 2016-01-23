@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: defimpl Enumerable
+# key: Enumerable
+# condition: (elixir-yasnippets--is-defimpl-line-of "Enumerable")
+# --
+Enumerable, for: ${1:Module$(upcase-initials yas-text)} do
+def reduce(source, acc, fun) do
+$0
+end
+
+def member?(_source , _value) do
+{:ok, false}
+end
+
+def count(_source) do
+{:ok, 0}
+end
+end
