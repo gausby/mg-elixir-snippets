@@ -41,8 +41,8 @@
     (setq currentLine (buffer-substring-no-properties beginning end))
     (setq topic (split-string currentLine))
     (if (eq (length topic) 2)
-        (if (string-match "@behaviour" (car topic))
-            (if (string-match behaviour (nth 1 topic))
+        (if (string-match "@behaviour" (pop topic))
+            (if (string-match behaviour (pop topic))
                 t)))))
 
 (defun elixir-yasnippets--is-use-line-of (module)
