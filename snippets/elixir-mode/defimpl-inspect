@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: defimpl Inspect
+# key: Inspect
+# condition: (elixir-yasnippets--is-defimpl-line-of "Inspect")
+# --
+Inspect, for: ${1:Module$(upcase-initials yas-text)} do
+import Inspect.Algebra
+
+def inspect(source, _opts) do
+${0:source}
+end
+end
