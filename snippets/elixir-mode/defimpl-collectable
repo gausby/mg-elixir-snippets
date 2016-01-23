@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: defimpl Collectable
+# key: Collectable
+# condition: (elixir-yasnippets--is-defimpl-line-of "Collectable")
+# --
+Collectable, for: ${1:Module$(upcase-initials yas-text)} do
+def into(original) do
+{original, fn
+acc, {:cont, value} ->
+${0:value}
+
+acc, :done ->
+acc
+
+_, :halt ->
+:ok
+end}
+end
+end
