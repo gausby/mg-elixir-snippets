@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: quote
+# key: quote
+# --
+quote do
+$0
+end
