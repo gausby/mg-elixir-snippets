@@ -40,6 +40,6 @@
 (eval-after-load "yasnippet"
    '(elixir-snippets-initialize))
 
-(provide 'elixir-snippets)
+(provide 'mg-elixir-snippets)
 
 ;;; elixir-snippets.el ends here
