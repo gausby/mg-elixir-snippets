@@ -1,6 +1,6 @@
 ;;; elixir-snippets.el --- A collection of Elixir snippets for YASnippets
 
-;; Copyright (C) 2011 Magnar Sveen
+;; Copyright (C) 2016 Martin Gausby
 
 ;; Author: Martin Gausby <martin@gausby.dk>
 ;; Keywords: snippets
@@ -23,22 +23,23 @@
 
 ;;; Code:
 
-(setq elixir-snippets-dir (file-name-directory (or (buffer-file-name) load-file-name)))
+(require 'yasnippet)
+
+(require 'elixir-snippet-helpers)
+
+(defvar elixir-snippets-dir (file-name-directory (or load-file-name (buffer-file-name))))
 
 ;;;###autoload
 (defun elixir-snippets-initialize ()
   (let ((snip-dir (expand-file-name "snippets" elixir-snippets-dir)))
-    (add-to-list 'yas-snippet-dirs snip-dir t)
-    (yas/load-directory snip-dir)))
+    (when (boundp 'yas-snippet-dirs)
+      (add-to-list 'yas-snippet-dirs snip-dir t))
+    (yas-load-directory snip-dir)))
 
 ;;;###autoload
-(eval-after-load 'yasnippet
+(eval-after-load "yasnippet"
    '(elixir-snippets-initialize))
 
-(require 'yasnippet)
+(provide 'elixir-snippets)
 
-(require 'elixir-snippets-helpers)
-
-(provide 'elixir-yasnippets)
-
-;;; elixir-yasnippets.el ends here
+;;; elixir-snippets.el ends here

@@ -1,4 +1,4 @@
-;;; elixir-snippets-helpers.el --- Helper functions for my Elixir yasnippets
+;;; elixir-snippet-helpers.el --- Helper functions for my Elixir yasnippets
 
 ;; Copyright (C) 2016 Martin Gausby
 
@@ -79,4 +79,4 @@
                 t)))))
 
 (provide 'elixir-snippet-helpers)
-;;; elixir-snippets-helpers.el ends here
+;;; elixir-snippet-helpers.el ends here
