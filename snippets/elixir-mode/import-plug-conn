@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Plug.Conn
+# key: Plug.Conn
+# condition: (elixir-yasnippets--is-import-line-of "Plug.Conn")
+# --
+Plug.Conn
+
+def init(opts) do
+opts
+end
+
+def call(conn, _opts) do
+conn$1
+end
