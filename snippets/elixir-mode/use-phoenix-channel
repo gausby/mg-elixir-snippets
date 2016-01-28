@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: Phoenix.Channel
+# key: Phoenix.Channel
+# condition: (elixir-yasnippets--is-use-line-of "Phoenix.Channel")
+# --
+Phoenix.Channel
+
+def join(${1:"rooms:lobby"}, message, socket) do
+Process.flag(:trap_exit, true)
+send(self, {:after_join, message})
+{:ok, socket}
+end
+
+def handle_info({:after_join, msg}, socket) do
+push socket, "join", %{status: "connected"}
+{:noreply, socket}
+end
+
+# incoming
+def handle_in(${2:"new:msg"}, msg, socket) do
+${0:{:reply, {:ok, %{}, assign(socket, :key, value)}}}
+end
