@@ -33,6 +33,9 @@
 (defun elixir-yasnippets--is-test-file ()
   (and buffer-file-name (elixir-yasnippets--string/ends-with buffer-file-name "_test.exs")))
 
+(defun elixir-yasnippets--maybe-phoenix-router-file ()
+  (and buffer-file-name (elixir-yasnippets--string/ends-with buffer-file-name "web/router.ex")))
+
 ;; detect if a line starts with `@behaviour ...`
 (defun elixir-yasnippets--is-behaviour-line-of (behaviour)
   (let (beginning end currentLine topic)
