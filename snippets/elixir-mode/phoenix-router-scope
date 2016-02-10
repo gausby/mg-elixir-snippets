@@ -3,6 +3,6 @@
 # key: scope
 # condition: (elixir-yasnippets--maybe-phoenix-router-file)
 # --
-scope "/$1", ${2:ModuleName$(upcase-initials yas-text)} do
+scope "/$1", ${2:Endpoint$(upcase-initials yas-text)} do
 ${3:pipe_through [:${0:browser}]}
 end

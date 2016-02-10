@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: pipeline
+# key: pipeline
+# condition: (elixir-yasnippets--maybe-phoenix-router-file)
+# --
+pipeline :${1:name} do
+$0
+end
