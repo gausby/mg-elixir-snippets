@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: defdelegate
+# key: defdelegate
+# comment: do not auto uppercase the module name because erlang modules can be used as well
+# --
+defdelegate ${2:fun}($3), to: ${1:ModuleName}$0
