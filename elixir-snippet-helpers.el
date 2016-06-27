@@ -36,6 +36,18 @@
 (defun elixir-yasnippets--maybe-phoenix-router-file ()
   (and buffer-file-name (elixir-yasnippets--string/ends-with buffer-file-name "web/router.ex")))
 
+;; detect if a line starts with a given module attribute
+(defun elixir-yasnippets--is-false-moduledoc-attribute ()
+  (let (beginning end currentLine topic)
+    (setq beginning (line-beginning-position))
+    (setq end (line-end-position))
+    (setq currentLine (buffer-substring-no-properties beginning end))
+    (setq topic (split-string currentLine))
+    (if (eq (length topic) 2)
+        (if (string-match "@moduledoc" (pop topic))
+            (if (string-match "false" (pop topic))
+                t)))))
+
 ;; detect if a line starts with `@behaviour ...`
 (defun elixir-yasnippets--is-behaviour-line-of (behaviour)
   (let (beginning end currentLine topic)
