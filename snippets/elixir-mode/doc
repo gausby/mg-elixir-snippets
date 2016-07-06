@@ -2,6 +2,4 @@
 # name: doc
 # key: @doc
 # --
-@doc """
-$0
-"""
+@doc false
