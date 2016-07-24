@@ -2,7 +2,6 @@
 # name: doc
 # key: false
 # condition: (elixir-yasnippets--is-false-doc-attribute)
-# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
 """
     $0
